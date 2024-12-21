@@ -32,3 +32,15 @@
   color: rgba(102, 102, 102, 1);
   font-size: 0.875rem;
 }
+
+.current-weather-wrapper {
+  position: relative;
+  img {
+    height: 157px;
+    width: 157px;
+    position: absolute;
+
+    right: 0;
+    top: -79px;
+  }
+}

@@ -8,6 +8,8 @@ const CurrentWeather: React.FC = () => {
   const searchHistory = useSearchHistory((state) => state.weatherHistory);
   const { getWeather, success, error } = useGetWeather();
   const [currentWeather, setCurrentWeather] = useState<WeatherResponse>();
+  const isCloudy = currentWeather?.weather?.[0]?.main === "Clouds";
+  const isSunny = currentWeather?.weather?.[0]?.main === "Clear";
 
   useEffect(() => {
     if (searchHistory.length <= 0) {
@@ -19,13 +21,14 @@ const CurrentWeather: React.FC = () => {
   }, [searchHistory]);
 
   useEffect(() => {
-    if (success) {
+    if (success && searchHistory.length <= 0) {
       setCurrentWeather(success);
     }
   }, [success]);
 
   return (
-    <div>
+    <div className={styles["current-weather-wrapper"]}>
+      {isCloudy ? <img src={"/src/assets/cloud.png"} /> : isSunny ? <img src={"/src/assets/sun.png"}/> : null}
       <h1 className={styles.title}>Today's Weather</h1>
       {currentWeather ? (
         <div className={styles["weather-details"]}>
@@ -47,7 +50,7 @@ const CurrentWeather: React.FC = () => {
       ) : error ? (
         <div>{error}</div>
       ) : (
-        <div>loading</div>
+        <div>Loading...</div>
       )}
     </div>
   );
