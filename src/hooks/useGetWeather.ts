@@ -52,14 +52,18 @@ export function useGetWeather() {
   const [success, setSuccess] = useState<WeatherResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const getWeather = async (latitude: number, longitude: number, locationName: string) => {
+  const getWeather = async (
+    latitude: number,
+    longitude: number,
+    locationName: string,
+  ) => {
     setError(null);
     setSuccess(null);
     const endpoint = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.REACT_APP_OPEN_WEATHER_API_KEY}&units=metric`;
     const response = await fetchAPI<WeatherResponse>(endpoint);
 
     if (typeof response !== "string") {
-      setSuccess({...response, name: locationName});
+      setSuccess({ ...response, name: locationName });
     } else {
       setError(response);
     }

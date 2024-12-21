@@ -52,8 +52,14 @@ const SearchLocationForm: React.FC = () => {
         <div>{findLocationError || getWeatherError}</div>
       ) : null}
       <form onSubmit={onSubmit} className={styles.form}>
-        <Input className={styles.input} inputName={"city"} label={"City/Country"} />
-        <button type={"submit"}><SearchIcon /></button>
+        <Input
+          className={styles.input}
+          inputName={"city"}
+          label={"City/Country"}
+        />
+        <button type={"submit"}>
+          <SearchIcon />
+        </button>
       </form>
       <div>
         {/*  dropdown here*/}

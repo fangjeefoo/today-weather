@@ -1,12 +1,12 @@
 import styles from "./Input.module.css";
-import {FC} from "react";
+import { FC } from "react";
 
 interface InputProps {
   className?: string;
   inputName: string;
   label: string;
 }
-export const Input: FC<InputProps> = ({ className, inputName, label}) => {
+export const Input: FC<InputProps> = ({ className, inputName, label }) => {
   return (
     <div className={`${styles["input-group"]} ${className}`}>
       <input
@@ -16,7 +16,9 @@ export const Input: FC<InputProps> = ({ className, inputName, label}) => {
         autoComplete="off"
         className={styles.input}
       />
-      <label htmlFor={inputName} className={styles["user-label"]}>{label}</label>
+      <label htmlFor={inputName} className={styles["user-label"]}>
+        {label}
+      </label>
     </div>
   );
 };
