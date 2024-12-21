@@ -1,4 +1,4 @@
-import './App.css'
+import "./App.css";
 import WeatherDetails from "./components/WeatherDetails";
 import SearchLocationForm from "./components/SearchLocationForm";
 
@@ -8,7 +8,7 @@ function App() {
       <SearchLocationForm />
       <WeatherDetails />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

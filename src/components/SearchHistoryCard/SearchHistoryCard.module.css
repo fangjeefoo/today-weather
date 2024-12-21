@@ -11,7 +11,8 @@
   column-gap: 16px;
 }
 
-.location, .date-time {
+.location,
+.date-time {
   margin: 0;
 }
 
