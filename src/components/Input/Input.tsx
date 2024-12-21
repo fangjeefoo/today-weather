@@ -1,16 +1,22 @@
 import styles from "./Input.module.css";
+import {FC} from "react";
 
-export const Input = () => {
+interface InputProps {
+  className?: string;
+  inputName: string;
+  label: string;
+}
+export const Input: FC<InputProps> = ({ className, inputName, label}) => {
   return (
-    <div className={styles["input-group"]}>
+    <div className={`${styles["input-group"]} ${className}`}>
       <input
         required
         type="text"
-        name="city"
+        name={inputName}
         autoComplete="off"
         className={styles.input}
       />
-      <label className={styles["user-label"]}>First Name</label>
+      <label htmlFor={inputName} className={styles["user-label"]}>{label}</label>
     </div>
   );
 };

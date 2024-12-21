@@ -1,0 +1,15 @@
+.form {
+  display: flex;
+  gap: 8px;
+
+  button {
+    padding: 0;
+    height: 40px;
+    width: 40px;
+    background: rgba(108, 64, 181, 1);
+  }
+}
+
+.input {
+  flex-grow: 1;
+}

@@ -3,6 +3,8 @@ import { FormEvent, useEffect, useState } from "react";
 import { useSearchHistory } from "../../store/useSearchHistory.ts";
 import { useFindLocation, Location } from "../../hooks/useFindLocation.ts";
 import { useGetWeather } from "../../hooks/useGetWeather.ts";
+import SearchIcon from "../../assets/icons/SearchIcon.tsx";
+import styles from "./SearchLocationForm.module.css";
 
 const SearchLocationForm: React.FC = () => {
   const [locationList, setLocationList] = useState<Location[]>([]);
@@ -49,9 +51,9 @@ const SearchLocationForm: React.FC = () => {
       {findLocationError || getWeatherError ? (
         <div>{findLocationError || getWeatherError}</div>
       ) : null}
-      <form onSubmit={onSubmit}>
-        <Input />
-        <button type={"submit"}>Search</button>
+      <form onSubmit={onSubmit} className={styles.form}>
+        <Input className={styles.input} inputName={"city"} label={"City/Country"} />
+        <button type={"submit"}><SearchIcon /></button>
       </form>
       <div>
         {/*  dropdown here*/}
