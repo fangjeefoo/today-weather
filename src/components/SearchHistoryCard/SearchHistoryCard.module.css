@@ -37,3 +37,16 @@
     border-radius: 9999px;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .form {
+    gap: 20px;
+
+    button {
+      height: 60px;
+      width: 60px;
+
+      border-radius: 20px;
+    }
+  }
+}
