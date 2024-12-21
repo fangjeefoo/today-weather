@@ -1,0 +1,10 @@
+.weather-details {
+  display: flex;
+  column-gap: 16px;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.title {
+  margin: 0;
+}

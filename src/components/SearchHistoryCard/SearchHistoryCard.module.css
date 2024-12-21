@@ -1,0 +1,38 @@
+.transparent-container {
+  background-color: rgba(255, 255, 255, 0.4);
+  width: 100%;
+
+  padding: 12px;
+
+  border-radius: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  column-gap: 16px;
+}
+
+.location, .date-time {
+  margin: 0;
+}
+
+.location {
+  font-size: 0.875rem;
+}
+
+.date-time {
+  font-size: 0.625rem;
+}
+
+.action {
+  display: flex;
+  column-gap: 8px;
+
+  button {
+    padding: 8px;
+    width: 34px;
+    height: 34px;
+
+    background-color: white;
+    border-radius: 9999px;
+  }
+}
