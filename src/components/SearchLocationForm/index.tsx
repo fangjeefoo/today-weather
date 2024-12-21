@@ -41,7 +41,7 @@ const SearchLocationForm: React.FC = () => {
   };
 
   const onClick = async (location: Location) => {
-    getWeather(location.coord.lat, location.coord.lon);
+    getWeather(location.coord.lat, location.coord.lon, location.name);
   };
 
   return (

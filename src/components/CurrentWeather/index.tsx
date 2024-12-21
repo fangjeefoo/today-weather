@@ -11,7 +11,7 @@ const CurrentWeather: React.FC = () => {
   useEffect(() => {
     if (searchHistory.length <= 0) {
       // Always fallback to Johor Bahru weather when search history is empty
-      getWeather(1.4655, 103.7578);
+      getWeather(1.4655, 103.7578, "Johor Bahru");
     } else {
       setCurrentWeather(searchHistory[searchHistory.length - 1]);
     }

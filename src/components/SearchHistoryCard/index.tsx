@@ -24,7 +24,7 @@ const SearchHistoryCard: React.FC<SearchHistoryCardProps> = ({ history }) => {
   }, [success]);
 
   const onClickSearch = async () => {
-    getWeather(history.coord.lat, history.coord.lon);
+    getWeather(history.coord.lat, history.coord.lon, history.name);
   };
 
   const onClickDelete = async () => {
