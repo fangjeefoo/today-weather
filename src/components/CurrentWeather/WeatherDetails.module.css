@@ -7,4 +7,28 @@
 
 .title {
   margin: 0;
+  font-size: 0.875rem;
+  font-weight: normal;
+}
+
+.current-temperature {
+  color: rgba(108, 64, 181, 1);
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.min-max-temperature {
+  font-size: 0.875rem;
+}
+
+.location {
+  color: rgba(102, 102, 102, 1);
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+
+.right-content {
+  text-align: right;
+  color: rgba(102, 102, 102, 1);
+  font-size: 0.875rem;
 }

@@ -2,6 +2,7 @@ import styles from "./WeatherDetails.module.css";
 import { useSearchHistory } from "../../store/useSearchHistory.ts";
 import { useEffect, useState } from "react";
 import { useGetWeather, WeatherResponse } from "../../hooks/useGetWeather.ts";
+import {convertEpochToLocalTime} from "../../utils/convertEpochToLocalTime.ts";
 
 const CurrentWeather: React.FC = () => {
   const searchHistory = useSearchHistory((state) => state.weatherHistory);
@@ -29,17 +30,17 @@ const CurrentWeather: React.FC = () => {
       {currentWeather ? (
         <div className={styles["weather-details"]}>
           <div>
-            <div>26</div>
-            <div>H:26 L:26</div>
-            <div>
+            <div className={styles["current-temperature"]}>{Math.round(currentWeather.main.temp)}&deg;</div>
+            <div className={styles["min-max-temperature"]}>H:{Math.round(currentWeather.main.temp_max)}&deg; L:{Math.round(currentWeather.main.temp_min)}&deg;</div>
+            <div className={styles.location}>
               {currentWeather.name}, {currentWeather.sys.country}
             </div>
           </div>
-          <div>
-            <div>Cloud</div>
-            <div>Humidity</div>
+          <div className={styles["right-content"]}>
+            <div>{currentWeather.weather?.[0]?.main}</div>
+            <div>Humidity: {currentWeather.main.humidity}%</div>
             <div>
-              {currentWeather.name}, {currentWeather.sys.country}
+              {convertEpochToLocalTime(currentWeather.dt, currentWeather.timezone).toLocaleString()}
             </div>
           </div>
         </div>

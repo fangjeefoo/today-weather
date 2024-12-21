@@ -7,6 +7,7 @@ import {
 } from "../../store/useSearchHistory.ts";
 import { useGetWeather } from "../../hooks/useGetWeather.ts";
 import { useEffect } from "react";
+import {convertEpochToLocalTime} from "../../utils/convertEpochToLocalTime.ts";
 
 interface SearchHistoryCardProps {
   history: WeatherHistory;
@@ -38,7 +39,7 @@ const SearchHistoryCard: React.FC<SearchHistoryCardProps> = ({ history }) => {
         <p className={styles.location}>
           {history.name}, {history.sys.country}
         </p>
-        <p className={styles["date-time"]}>{history.dt}</p>
+        <p className={styles["date-time"]}>{convertEpochToLocalTime(history.dt, history.timezone).toLocaleString()}</p>
       </div>
       <div className={styles.action}>
         <button onClick={onClickSearch}>
