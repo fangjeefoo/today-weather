@@ -30,12 +30,12 @@
 }
 
 @media screen and (min-width: 768px) {
-  .title, .no-record {
+  .title,
+  .no-record {
     font-size: 1rem;
   }
 
   .transparent-container {
     padding: 24px 20px;
   }
-
 }

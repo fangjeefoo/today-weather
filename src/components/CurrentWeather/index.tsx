@@ -1,10 +1,13 @@
 import styles from "./WeatherDetails.module.css";
-import {useSearchHistory, WeatherHistory} from "../../store/useSearchHistory.ts";
+import {
+  useSearchHistory,
+  WeatherHistory,
+} from "../../store/useSearchHistory.ts";
 import { useEffect, useState } from "react";
 import { useGetWeather } from "../../hooks/useGetWeather.ts";
 import { convertTimeToLocalTime } from "../../utils/convertTimeToLocalTime.ts";
 import ErrorMessage from "../ErrorMessage";
-import {UTCDateFormatting} from "../../constants/UTCDateFormatting.ts";
+import { UTCDateFormatting } from "../../constants/UTCDateFormatting.ts";
 
 const CurrentWeather: React.FC = () => {
   const searchHistory = useSearchHistory((state) => state.weatherHistory);
@@ -25,7 +28,7 @@ const CurrentWeather: React.FC = () => {
 
   useEffect(() => {
     if (success && searchHistory.length <= 0) {
-      setCurrentWeather({ ...success, timestamp: Date.now()});
+      setCurrentWeather({ ...success, timestamp: Date.now() });
     }
   }, [success, searchHistory]);
 
@@ -58,7 +61,7 @@ const CurrentWeather: React.FC = () => {
               {convertTimeToLocalTime(
                 currentWeather.timestamp,
                 currentWeather.timezone,
-              ).toLocaleString( undefined, UTCDateFormatting)}
+              ).toLocaleString(undefined, UTCDateFormatting)}
             </div>
           </div>
         </div>

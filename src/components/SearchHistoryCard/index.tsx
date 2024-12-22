@@ -9,7 +9,7 @@ import { useGetWeather } from "../../hooks/useGetWeather.ts";
 import { useEffect } from "react";
 import { convertTimeToLocalTime } from "../../utils/convertTimeToLocalTime.ts";
 import ErrorMessage from "../ErrorMessage";
-import {UTCDateFormatting} from "../../constants/UTCDateFormatting.ts";
+import { UTCDateFormatting } from "../../constants/UTCDateFormatting.ts";
 
 interface SearchHistoryCardProps {
   history: WeatherHistory;
