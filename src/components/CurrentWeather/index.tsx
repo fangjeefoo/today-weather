@@ -1,15 +1,15 @@
 import styles from "./WeatherDetails.module.css";
-import { useSearchHistory } from "../../store/useSearchHistory.ts";
+import {useSearchHistory, WeatherHistory} from "../../store/useSearchHistory.ts";
 import { useEffect, useState } from "react";
-import { useGetWeather, WeatherResponse } from "../../hooks/useGetWeather.ts";
-import { convertEpochToLocalTime } from "../../utils/convertEpochToLocalTime.ts";
+import { useGetWeather } from "../../hooks/useGetWeather.ts";
+import { convertTimeToLocalTime } from "../../utils/convertTimeToLocalTime.ts";
 import ErrorMessage from "../ErrorMessage";
 import {UTCDateFormatting} from "../../constants/UTCDateFormatting.ts";
 
 const CurrentWeather: React.FC = () => {
   const searchHistory = useSearchHistory((state) => state.weatherHistory);
   const { getWeather, success, error } = useGetWeather();
-  const [currentWeather, setCurrentWeather] = useState<WeatherResponse>();
+  const [currentWeather, setCurrentWeather] = useState<WeatherHistory>();
   const isCloudy = currentWeather?.weather?.[0]?.main === "Clouds";
   const isSunny = currentWeather?.weather?.[0]?.main === "Clear";
 
@@ -25,7 +25,7 @@ const CurrentWeather: React.FC = () => {
 
   useEffect(() => {
     if (success && searchHistory.length <= 0) {
-      setCurrentWeather(success);
+      setCurrentWeather({ ...success, timestamp: Date.now()});
     }
   }, [success, searchHistory]);
 
@@ -55,8 +55,8 @@ const CurrentWeather: React.FC = () => {
             <div>{currentWeather.weather?.[0]?.main}</div>
             <div>Humidity: {currentWeather.main.humidity}%</div>
             <div>
-              {convertEpochToLocalTime(
-                currentWeather.dt,
+              {convertTimeToLocalTime(
+                currentWeather.timestamp,
                 currentWeather.timezone,
               ).toLocaleString( undefined, UTCDateFormatting)}
             </div>

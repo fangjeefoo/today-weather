@@ -7,7 +7,7 @@ import {
 } from "../../store/useSearchHistory.ts";
 import { useGetWeather } from "../../hooks/useGetWeather.ts";
 import { useEffect } from "react";
-import { convertEpochToLocalTime } from "../../utils/convertEpochToLocalTime.ts";
+import { convertTimeToLocalTime } from "../../utils/convertTimeToLocalTime.ts";
 import ErrorMessage from "../ErrorMessage";
 import {UTCDateFormatting} from "../../constants/UTCDateFormatting.ts";
 
@@ -44,8 +44,8 @@ const SearchHistoryCard: React.FC<SearchHistoryCardProps> = ({ history }) => {
               {history.name}, {history.sys.country}
             </p>
             <p className={styles["date-time"]}>
-              {convertEpochToLocalTime(
-                history.dt,
+              {convertTimeToLocalTime(
+                history.timestamp,
                 history.timezone,
               ).toLocaleString(undefined, UTCDateFormatting)}
             </p>
