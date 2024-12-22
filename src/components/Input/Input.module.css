@@ -37,7 +37,8 @@
   }
 }
 
-.clear-input-button:focus, .clear-input-button:hover {
+.clear-input-button:focus,
+.clear-input-button:hover {
   border: none;
   outline: none;
 }

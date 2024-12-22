@@ -3,6 +3,7 @@ import { useSearchHistory } from "../../store/useSearchHistory.ts";
 import { useEffect, useState } from "react";
 import { useGetWeather, WeatherResponse } from "../../hooks/useGetWeather.ts";
 import { convertEpochToLocalTime } from "../../utils/convertEpochToLocalTime.ts";
+import ErrorMessage from "../ErrorMessage";
 
 const CurrentWeather: React.FC = () => {
   const searchHistory = useSearchHistory((state) => state.weatherHistory);
@@ -60,7 +61,7 @@ const CurrentWeather: React.FC = () => {
           </div>
         </div>
       ) : error ? (
-        <div>{error}</div>
+        <ErrorMessage message={error} />
       ) : (
         <div>Loading...</div>
       )}
