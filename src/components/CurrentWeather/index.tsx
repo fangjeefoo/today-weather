@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useGetWeather, WeatherResponse } from "../../hooks/useGetWeather.ts";
 import { convertEpochToLocalTime } from "../../utils/convertEpochToLocalTime.ts";
 import ErrorMessage from "../ErrorMessage";
+import {UTCDateFormatting} from "../../constants/UTCDateFormatting.ts";
 
 const CurrentWeather: React.FC = () => {
   const searchHistory = useSearchHistory((state) => state.weatherHistory);
@@ -57,7 +58,7 @@ const CurrentWeather: React.FC = () => {
               {convertEpochToLocalTime(
                 currentWeather.dt,
                 currentWeather.timezone,
-              ).toLocaleString()}
+              ).toLocaleString( undefined, UTCDateFormatting)}
             </div>
           </div>
         </div>

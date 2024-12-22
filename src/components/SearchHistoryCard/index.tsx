@@ -9,6 +9,7 @@ import { useGetWeather } from "../../hooks/useGetWeather.ts";
 import { useEffect } from "react";
 import { convertEpochToLocalTime } from "../../utils/convertEpochToLocalTime.ts";
 import ErrorMessage from "../ErrorMessage";
+import {UTCDateFormatting} from "../../constants/UTCDateFormatting.ts";
 
 interface SearchHistoryCardProps {
   history: WeatherHistory;
@@ -46,7 +47,7 @@ const SearchHistoryCard: React.FC<SearchHistoryCardProps> = ({ history }) => {
               {convertEpochToLocalTime(
                 history.dt,
                 history.timezone,
-              ).toLocaleString()}
+              ).toLocaleString(undefined, UTCDateFormatting)}
             </p>
           </div>
           <div className={styles.action}>
