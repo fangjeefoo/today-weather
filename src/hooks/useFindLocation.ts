@@ -52,6 +52,11 @@ export function useFindLocation() {
   const [success, setSuccess] = useState<FindLocationResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  const reset = () => {
+    setSuccess(null);
+    setError(null);
+  };
+
   const findLocation = async (location: string) => {
     setSuccess(null);
     setError(null);
@@ -70,5 +75,6 @@ export function useFindLocation() {
     success,
     error,
     findLocation,
+    reset,
   };
 }

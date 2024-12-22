@@ -15,11 +15,13 @@ const SearchLocationForm: React.FC = () => {
     findLocation,
     success: findLocationSuccess,
     error: findLocationError,
+    reset: resetFindLocation,
   } = useFindLocation();
   const {
     getWeather,
     success: getWeatherSuccess,
     error: getWeatherError,
+    reset: resetGetWeather,
   } = useGetWeather();
 
   useEffect(() => {
@@ -58,6 +60,8 @@ const SearchLocationForm: React.FC = () => {
           }}
           value={inputValue}
           setValue={(value) => {
+            resetGetWeather();
+            resetFindLocation();
             setLocationList(null);
             setInputValue(value);
           }}

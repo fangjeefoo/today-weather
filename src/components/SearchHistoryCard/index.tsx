@@ -17,7 +17,7 @@ interface SearchHistoryCardProps {
 const SearchHistoryCard: React.FC<SearchHistoryCardProps> = ({ history }) => {
   const addSearchHistory = useSearchHistory((state) => state.addHistory);
   const removeSearchHistory = useSearchHistory((state) => state.removeHistory);
-  const { getWeather, success, error } = useGetWeather();
+  const { getWeather, success, error, reset } = useGetWeather();
 
   useEffect(() => {
     if (success) {
@@ -26,6 +26,7 @@ const SearchHistoryCard: React.FC<SearchHistoryCardProps> = ({ history }) => {
   }, [success]);
 
   const onClickSearch = async () => {
+    reset();
     getWeather(history.coord.lat, history.coord.lon, history.name);
   };
 

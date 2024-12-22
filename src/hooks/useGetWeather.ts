@@ -52,6 +52,11 @@ export function useGetWeather() {
   const [success, setSuccess] = useState<WeatherResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  const reset = () => {
+    setSuccess(null);
+    setError(null);
+  };
+
   const getWeather = async (
     latitude: number,
     longitude: number,
@@ -73,5 +78,6 @@ export function useGetWeather() {
     success,
     error,
     getWeather,
+    reset,
   };
 }
