@@ -25,8 +25,12 @@
   row-gap: 16px;
 }
 
+.no-record {
+  font-size: 0.875rem;
+}
+
 @media screen and (min-width: 768px) {
-  .title {
+  .title, .no-record {
     font-size: 1rem;
   }
 }

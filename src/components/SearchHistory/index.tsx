@@ -15,7 +15,7 @@ const SearchHistory: React.FC = () => {
           ))}
         </div>
       ) : (
-        <div>No records found</div>
+        <div className={styles["no-record"]}>No records found</div>
       )}
     </div>
   );
