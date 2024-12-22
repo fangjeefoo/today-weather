@@ -33,4 +33,9 @@
   .title, .no-record {
     font-size: 1rem;
   }
+
+  .transparent-container {
+    padding: 24px 20px;
+  }
+
 }
