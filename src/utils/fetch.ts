@@ -7,8 +7,7 @@ export async function fetchAPI<T>(
       ...config,
     });
     if (!response.ok) {
-      const error = new Error(`Something went wrong. Please try again.`);
-      throw error;
+      throw new Error('Something went wrong. Please try again.');
     }
     return response.json();
   } catch (error: unknown) {

@@ -26,14 +26,14 @@ const CurrentWeather: React.FC = () => {
     if (success && searchHistory.length <= 0) {
       setCurrentWeather(success);
     }
-  }, [success]);
+  }, [success, searchHistory]);
 
   return (
     <div className={styles["current-weather-wrapper"]}>
       {isCloudy ? (
-        <img src={"/src/assets/cloud.png"} />
+        <img src={"/src/assets/cloud.png"} alt="" />
       ) : isSunny ? (
-        <img src={"/src/assets/sun.png"} />
+        <img src={"/src/assets/sun.png"} alt="" />
       ) : null}
       <h1 className={styles.title}>Today's Weather</h1>
       {currentWeather ? (
