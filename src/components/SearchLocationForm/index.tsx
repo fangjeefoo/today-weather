@@ -55,9 +55,6 @@ const SearchLocationForm: React.FC = () => {
           className={styles.input}
           inputName={"city"}
           label={"City/Country"}
-          clearInput={() => {
-            setLocationList(null);
-          }}
           value={inputValue}
           setValue={(value) => {
             resetGetWeather();
