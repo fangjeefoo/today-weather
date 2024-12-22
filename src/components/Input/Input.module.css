@@ -21,6 +21,27 @@
   top: 4px;
 }
 
+.clear-input-button {
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  background: transparent;
+  padding: 0;
+  width: 16px;
+  height: 16px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    color: #666666;
+  }
+}
+
+.clear-input-button:focus, .clear-input-button:hover {
+  border: none;
+  outline: none;
+}
+
 @media screen and (min-width: 768px) {
   .input {
     height: 60px;
@@ -33,5 +54,10 @@
     font-size: 0.625rem;
     left: 24px;
     top: 4px;
+  }
+
+  .clear-input-button {
+    right: 20px;
+    top: 20px;
   }
 }

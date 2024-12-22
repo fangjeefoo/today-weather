@@ -1,36 +1,9 @@
 const SearchIcon: React.FC = () => {
   return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-    >
-      <rect
-        width="16"
-        height="16"
-        fill="url(#pattern0_2_336)"
-        fill-opacity="0.5"
-      />
-      <defs>
-        <pattern
-          id="pattern0_2_336"
-          patternContentUnits="objectBoundingBox"
-          width="1"
-          height="1"
-        >
-          <use xlinkHref="#image0_2_336" transform="scale(0.0104167)" />
-        </pattern>
-        <image
-          id="image0_2_336"
-          width="96"
-          height="96"
-          xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAAAsTAAALEwEAmpwYAAAElUlEQVR4nO2cy29VVRSHv6Tea5lxiUGRCWCYKA7UwARnNJGERyIMmBFFiY4MIuaOeISIwQmJzqCJQUYa/gZ8QKCJ/4FapYYogrZFmVgsbLLDugmp0L3Oub1nP+76kpU07bk9a6/fufux9toHDMMwDMMwDMMwBs8IsAk4CIwDF4FfgBngDjAnP/8MfAeckWs3ymeNGrSAncB54Bbgatos8BWwQ/6nEWAFcAy42UfQ3WPsBnAE6JgK/2cZcBz4ZwCBdwvsb+AoMGpCPGCb9OmuYZsEtg6zCL5PPgncixB8J+bv/SnQZsh4Bvg+YuDdApsAVjIkrAV+TCDoboH5bnA9hfMc8HuN4MwDl4GPgF3A8zKbaYl15He75JrL8pmq9/kNWEfB3c5kxYBcBT4AVtW43yrgEDBV8Z4/ldgdPVmxz78OvLlEi6cW8BbwR8UxoaiB+bMKjf8cWD4AH5YDZyv4cYqC5vmaqea/wN4G/HlD8kchf+6VsE5Yplxk3Qa2NOjXmNwz5Ndk7ivm48onv8ng99ii/Cb4/FG2iTVNbqeJbmex7ijk360BjUkD55hywI3NWYWfh8mMliKlfD2RJ6sjqerFfPVT2CfIiJ2Kp8rP81PhbYW/28mI84oVbko7VC3FivlLMmFEsY3o0wupcSjg80wue8ybAg2Zr5nbGTTPKhJ4r5ABBwON8JnKVLkS8P0AGTAeaIRPF6fKiYDvp8mAS4FGvE667A74/i0ZcDXQCL9xkiobAr77vFbyTAca4VMUqfJUwPc/yYBQgqud+MaRCyQOk6dkAebIgJK7oL8oYBB+gXTZUMIgfLHgaejXZMCZjBdiHwd894vM5Hk/41TERMD398iAjYFG3AVWk2cy7iUyYEROpizWEJ/6TY0PAz7P5pKORo4FLdaYqQQ3ZH4N+PwFGbEj0Bgn5YKpsF/hr29TNrSUG92pbMrfDPh6LbFvrIojiqfKl4TE5pzCzy4Z0pEDcaHG+eKoWOxT+DedyDe1FkcVDZyTWs2mGVOWJqZYQKBmVHko43bDIowpi3N/yL041/Oasjx9rqHuaJ/yyfcLxlcphFOKBj88MA/iNHtHOeD27BMKoq3IszxsN6RccKmOKO2v+PqDC7nVgmpYKQfgXAWbkrSFz9NUZbWkF0Ir3EfZOxTKOjkKWjUg81I0dUJy9i/KzlpbbIX8brdcM1HzmGrP/gP2UChrZHbhMrWTFMDTFceEQdsF4F158jXX+8Mn2dOW2VHMl3XcldlOb8DdU+GzRYiAHAWteoLeLYH5bnDzI/xxwyjCqCTvNLkj16dNS3rhcStcN6wiIEmvwxVfK+CUdk2ymqHEmht2EZA+ebscC5rpI+izspNV5aV9de9VnAg9RuRkygGpz/9GXlE5LTmdOyLSpPxtXKoXXq65h9vPt6xYEZqk26cIRawTYtM1EeLTNRHi0zUR4tM1EeLTNRHi0zUR4mMiJICJkAAmQgKYCAlgIiSAiZAAJkICmAgJYCJkLoIv5zciiWDBjyiCBT+iCBb8iCJY8COKYMGPKIIFPxK+bshqhwzDMAzDMAzDoAr3AQhBT6RJhXNIAAAAAElFTkSuQmCC"
-        />
-      </defs>
-    </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16px" height="16px"         fill="currentFill">
+        <path
+            d="M 9 2 C 5.1458514 2 2 5.1458514 2 9 C 2 12.854149 5.1458514 16 9 16 C 10.747998 16 12.345009 15.348024 13.574219 14.28125 L 14 14.707031 L 14 16 L 20 22 L 22 20 L 16 14 L 14.707031 14 L 14.28125 13.574219 C 15.348024 12.345009 16 10.747998 16 9 C 16 5.1458514 12.854149 2 9 2 z M 9 4 C 11.773268 4 14 6.2267316 14 9 C 14 11.773268 11.773268 14 9 14 C 6.2267316 14 4 11.773268 4 9 C 4 6.2267316 6.2267316 4 9 4 z"/>
+      </svg>
   );
 };
 

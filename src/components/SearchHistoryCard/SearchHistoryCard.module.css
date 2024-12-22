@@ -38,6 +38,10 @@
   }
 }
 
+.search-button {
+  fill: #666666;
+}
+
 @media screen and (min-width: 768px) {
   .form {
     gap: 20px;
@@ -48,5 +52,20 @@
 
       border-radius: 20px;
     }
+  }
+
+  .location {
+    font-size: 1rem;
+  }
+
+  .date-time {
+    font-size: 0.875rem;
+  }
+
+  .location-details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }

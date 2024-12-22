@@ -7,6 +7,7 @@ import SearchIcon from "../../assets/icons/SearchIcon.tsx";
 import styles from "./SearchLocationForm.module.css";
 
 const SearchLocationForm: React.FC = () => {
+  const [inputValue, setInputValue] = useState("");
   const [locationList, setLocationList] = useState<Location[]>([]);
   const addSearchHistory = useSearchHistory((state) => state.addHistory);
   const {
@@ -34,41 +35,46 @@ const SearchLocationForm: React.FC = () => {
 
   const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    findLocation(inputValue)
     setLocationList([]);
-    const formData = new FormData(event.target as HTMLFormElement);
-
-    for (const [_, value] of formData.entries()) {
-      findLocation(value as string);
-    }
+    setInputValue("")
   };
 
   const onClick = async (location: Location) => {
+    setLocationList([]);
     getWeather(location.coord.lat, location.coord.lon, location.name);
   };
 
   return (
-    <div>
+    <div className={styles["search-location-form-wrapper"]}>
       {findLocationError || getWeatherError ? (
         <div>{findLocationError || getWeatherError}</div>
       ) : null}
       <form onSubmit={onSubmit} className={styles.form}>
         <Input
-          className={styles.input}
-          inputName={"city"}
-          label={"City/Country"}
-        />
-        <button type={"submit"}>
+            className={styles.input}
+            inputName={"city"}
+            label={"City/Country"}
+            clearInput={() => {
+              setLocationList([]);
+            }}
+            value={inputValue}
+            setValue={(value) => setInputValue(value)}
+/>
+        <button className={styles["submit-button"]} type={"submit"}>
           <SearchIcon />
         </button>
       </form>
-      <div>
-        {/*  dropdown here*/}
-        {locationList.map((location) => (
-          <div onClick={() => onClick(location)}>
-            {location.name}, {location.sys.country}
+      {locationList.length > 0 ? (
+          <div className={styles.dropdown}>
+            {/*  dropdown here*/}
+            {locationList.map((location) => (
+                <button onClick={() => onClick(location)}>
+                  {location.name}, {location.sys.country}
+                </button>
+            ))}
           </div>
-        ))}
-      </div>
+      ) : null}
     </div>
   );
 };

@@ -2,28 +2,67 @@
   display: flex;
   gap: 8px;
 
-  button {
+  .submit-button {
     padding: 0;
     height: 40px;
     width: 40px;
     background: rgba(108, 64, 181, 1);
     border-radius: 8px;
+    fill: white;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
   }
+}
+
+.search-location-form-wrapper {
+  position: relative;
 }
 
 .input {
   flex-grow: 1;
 }
 
+.dropdown {
+  position: absolute;
+  width: calc(100% - 40px - 8px);
+  top: 44px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  z-index: 10;
+
+  button {
+    width: 100%;
+    background: white;
+    color: black;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .form {
     gap: 20px;
 
-    button {
+    .submit-button {
       height: 60px;
       width: 60px;
 
       border-radius: 20px;
+
+      svg {
+        width: 34px;
+        height: 34px;
+      }
     }
+  }
+
+  .dropdown {
+    top: 64px;
+    width: calc(100% - 60px - 20px);
   }
 }

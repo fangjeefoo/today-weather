@@ -34,24 +34,24 @@ const SearchHistoryCard: React.FC<SearchHistoryCardProps> = ({ history }) => {
 
   return (
     <div className={styles["transparent-container"]}>
-      <div>
+      <div className={styles["location-details"]}>
         {error ? <div>{error}</div> : null}
-        <p className={styles.location}>
-          {history.name}, {history.sys.country}
-        </p>
-        <p className={styles["date-time"]}>
-          {convertEpochToLocalTime(
-            history.dt,
-            history.timezone,
-          ).toLocaleString()}
-        </p>
+          <p className={styles.location}>
+            {history.name}, {history.sys.country}
+          </p>
+          <p className={styles["date-time"]}>
+            {convertEpochToLocalTime(
+                history.dt,
+                history.timezone,
+            ).toLocaleString()}
+          </p>
       </div>
       <div className={styles.action}>
-        <button onClick={onClickSearch}>
+        <button onClick={onClickSearch} className={styles["search-button"]}>
           <SearchIcon />
         </button>
         <button onClick={onClickDelete}>
-          <DeleteIcon />
+          <DeleteIcon/>
         </button>
       </div>
     </div>
